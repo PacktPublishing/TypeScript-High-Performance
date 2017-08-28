@@ -32,6 +32,41 @@ Windows, Linux, or MacOS
 Telerik Fiddler
 Frontend editor--preferably VS Code or Atom/Sublime Text
 
+## References
+Chapter 1:
+* https://www.tutorialspoint.com/typescript/typescript_operators.htm
+
+Chapter 2:
+* https://www.typescriptlang.org/docs/handbook/namespaces-and-modules.html
+* https://www.typescriptlang.org/docs/handbook/variable-declarations.html
+
+Chapter 3:
+* https://www.typescriptlang.org/docs/handbook/functions.html
+* https://www.typescriptlang.org/docs/handbook/mixins.html
+* https://www.typescriptlang.org/docs/handbook/declaration-merging.html
+* https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html
+
+Chapter 4:
+* https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/
+* https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+Chapter 5:
+* https://journal.artfuldev.com/write-tests-for-typescript-projects-with-mocha-and-chai-in-typescript-86e053bdb2b6
+* https://github.com/palantir/tslint
+
+Chapter 6:
+* https://developers.google.com/web/fundamentals/performance/critical-rendering-path/
+* https://en.wikipedia.org/wiki/Content_delivery_network
+* https://www.youtube.com/watch?v=YV1nKLWoARQ
+
+Chapter 7:
+* https://developers.google.com/web/tools/chrome-devtools/rendering-tools/
+* http://www.telerik.com/fiddler/web-app-performance-testing
+* https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+Chapter 8:
+* https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html
+
 ## Related Products
 * [Building Pro Web Apps with TypeScript 2.x [Video]](https://www.packtpub.com/application-development/building-pro-web-apps-typescript-2x-video?utm_source=github&utm_medium=repository&utm_campaign=9781788292054)
 
