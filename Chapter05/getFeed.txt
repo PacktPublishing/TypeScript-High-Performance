@@ -1,0 +1,8 @@
+ public getFeed(feedCategory: FeedCategory): IUserFeed[] {
+          const resultFeed: IUserFeed[] = [];
+          this.fakeUserFeed.forEach((userFeed: IUserFeed) => {
+           if (userFeed.feedCategory === feedCategory)
+           resultFeed.push(userFeed);
+        });
+           return resultFeed;
+         }

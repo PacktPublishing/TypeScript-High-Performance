@@ -1,0 +1,40 @@
+  function TreeSum(): number {
+         return TreeSum_R(TreeSum.root);
+        }
+
+        function TreeSum_R(node: TreeNode): number {
+          return node === null ? 0 : node.value + TreeSum_R(node.left) 
+          + TreeSum_R(node.right);
+        }
+
+        class Tree {
+         private root: TreeNode;
+
+         constructor() {
+           this.root = new TreeNode(10);
+           this.root.left = new TreeNode(5);
+           this.root.right = new TreeNode(15);
+          }
+
+         public getRoot(): TreeNode {
+         return this.root;
+         }
+        }
+
+        class TreeNode {
+          public value: number;
+          public left: TreeNode;
+          public right: TreeNode;
+
+         constructor(val: number) {
+           this.value = val;
+           this.left = this.right = null;
+         }
+        }
+
+        namespace TreeSum {
+          let tree: Tree = new Tree();
+          export let root: TreeNode = tree.getRoot();
+        }
+
+        console.log('Sum is: ', TreeSum());

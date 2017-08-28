@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <!-- Include default props at the bottom -->
+    <Project ToolsVersion="4.0" DefaultTargets="Build" 
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <!-- Include default props at the bottom -->
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\
+    v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.
+    props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\
+    VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.
+    TypeScript.Default.props')" />
+    <!-- TypeScript configurations go here -->
+    <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+      <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+      <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+        <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+        <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    </PropertyGroup>
+    <!-- Include default targets at the bottom -->
+    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\
+    VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.
+    TypeScript.targets"Condition="Exists('$(MSBuildExtensionsPath32)\      
+    Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\
+    Microsoft.TypeScript.targets')" />
+    </Project>

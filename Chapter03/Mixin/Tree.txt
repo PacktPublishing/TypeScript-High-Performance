@@ -1,0 +1,45 @@
+class Tree {
+      public root: TreeNode = null;
+
+      // construct the input BST we covered earlier
+      public constructTree(): void {
+       this.root = new TreeNode(4);
+       this.root.left = new TreeNode(2);
+       this.root.right = new TreeNode(5);
+       this.root.left.left = new TreeNode(1);
+       this.root.left.right = new TreeNode(3);
+       this.root.right.left = new TreeNode(6);
+       this.root.right.right = new TreeNode(7);
+      }
+    }
+
+    // Traversable Mixin - Mixin #2
+    class Traversable {
+      // inorder traversal starting at 'node'
+      public traverse(node: TreeNode) {
+       const inorder_R = (node: TreeNode): void => {
+       if (node == null) return;
+       inorder_R(node.left);
+       console.log(node.data);
+       inorder_R(node.right);
+      }
+      inorder_R(node);
+     }
+    }
+
+    // Mirrorble Mixin - Mixin #3
+    class Mirrorable {
+      public mirror(node: TreeNode): TreeNode {
+       const mirror_R = (node: TreeNode): TreeNode => {
+       if (node == null) return null;
+       mirror_R(node.left);
+       mirror_R(node.right);
+       // swap the left and right subtrees
+       let temp: TreeNode = node.left;
+       node.left = node.right;
+       node.right = temp;
+       return node;
+      }
+      return mirror_R(node);
+     }
+    }

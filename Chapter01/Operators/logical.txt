@@ -1,0 +1,12 @@
+const condition: boolean = x > 0 && x < 10; // simple   
+        condition AND
+
+        this.instanceVariable && this.instanceVariable.DoOperation(); 
+        /* AND used to check for non-null instance variable, and then    
+        perform the operation on that instance. */
+
+        // This could also be written as
+
+        if (this.instanceVariable) { 
+             this.instanceVariable.DoOperation(); 
+         }

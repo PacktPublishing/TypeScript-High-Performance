@@ -1,0 +1,29 @@
+ <!doctype html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          .container {
+          /* container styles */
+        }
+          .panel {
+          /* panel styles */
+        }
+          #top-feed {
+          color: red;
+          margin-left: 5em;
+       }
+       </style>
+       <script src="allScript.js" type="text/javascript" />
+        </head>
+    <body>
+      <div class="container">
+        <h2> Social Network X </h2>
+      <div id=top-feed class="panel">
+         <img src="{{feed[0].imageUrl}}" />
+         <p> {{feed[0].content}} </p>
+         <p> {{feed[0].commentsAndLikes}} </p>
+        </div>
+     </div>
+     </body>
+    </html>

@@ -1,0 +1,14 @@
+const loadHomeScreen_Synchronous = (startTime: number) => {
+          // fetch public feed synchronously, takes around ~10s
+          for (let i = 0; i < 5000000000; i++) {}
+          console.log('Fetched Public Feed - ', Date.now() -  
+          startTime);
+          console.log('Fetched Profile Info - ', Date.now() - 
+          startTime);
+          console.log('Fetched Friends Feed - ', Date.now() - 
+          startTime);
+          console.log('Fetched and Loaded Notifications - ',  
+          Date.now() - startTime);
+          console.log('Fetched and Loaded Friend Suggestions - ', 
+          Date.now() - startTime);
+        }

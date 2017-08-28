@@ -1,0 +1,21 @@
+function PromiseFunction(): Promise<string> {
+     return new Promise<string>((resolve, reject) => {
+     setTimeout(() => {
+     resolve("Hello World");
+     }, 5000);
+     });
+    }
+
+    // Function prefixed with the "async" keyword
+    async function AsyncFunction() {
+     const result: string = await PromiseFunction();
+     console.log('Asynchronous work completes - ', Date.now() -     
+     baseStartTime);
+     console.log('Result: ', result);
+    }
+
+    console.log('Asynchronous work starts - ', Date.now() -   
+    baseStartTime);
+    AsyncFunction();
+    console.log('Other work continues - ', Date.now() - 
+    baseStartTime);

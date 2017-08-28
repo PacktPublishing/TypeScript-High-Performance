@@ -1,0 +1,92 @@
+enum FeedCategory { Text, Image, Audio, AudioVideo };
+
+    interface IUserFeed {
+     feedId: number;
+     feedCategory: FeedCategory;
+     content: string;
+     time: number;
+    }
+
+    interface ICallback {
+     (result: IUserFeed[], err: Error): void;
+    }
+
+    class FeedQuery {
+
+     // private variables
+     private fakeUserFeed: IUserFeed[] = [{
+       feedId: 156,
+       feedCategory: FeedCategory.Text,
+       content: "Hello World",
+       time: 1201
+       }, {
+       feedId: 76,
+       feedCategory: FeedCategory.Text,
+       content: "On top of Mount Rainer!",
+       time: 1156
+       }, {
+       feedId: 12,
+       feedCategory: FeedCategory.Image,
+       content: "http://fakeUrl.com/test.jpeg",
+       time: 1789
+       }, {
+       feedId: 79,
+       feedCategory: FeedCategory.AudioVideo,
+       content: "http://fakeUrl.com/test1.mov",
+       time: 1555
+       }, {
+       feedId: 5,
+       feedCategory: FeedCategory.AudioVideo,
+       content: "http://fakeUrl.com/test2.mov",
+       time: 1452
+       }, {
+       feedId: 109,
+       feedCategory: FeedCategory.Text,
+       content: "Best Lunch ever!",
+       time: 1109
+     }];
+
+     // public methods
+     public getFeed(feedCategory: FeedCategory, callback: ICallback): 
+     void {
+       console.log(FeedCategory[feedCategory] + ' fetch begins',  
+       Date.now() - baseStartTime);
+
+     // simulating an asynchronous network request
+     setTimeout(() => {
+       let resultFeed: IUserFeed[] = [];
+       this.fakeUserFeed.forEach((userFeed: IUserFeed) => {
+           if (userFeed.feedCategory === feedCategory) {
+              resultFeed.push(userFeed);
+           }
+       });
+       if (resultFeed.length === 0) {
+         callback(null, new Error("No feed found for the " +  
+         FeedCategory[feedCategory] + " category"));
+       } else {
+         callback(resultFeed, null);
+        }
+       }, 5000);
+     }
+    }
+
+     const feedQuery: FeedQuery = new FeedQuery();
+     const feedFetchCompleted: ICallback = (result: IUserFeed[], err:   
+     Error): void => {
+       console.log('Callback called!', Date.now() - baseStartTime);
+      if (err) {
+        console.log('Error fetching feed: ', err);
+      } else {
+       console.log('Succesfully fetched feed of length: ', 
+       result.length);
+     }
+    }
+
+     const baseStartTime: number = Date.now();
+  
+     console.log('Fetching Text Feed - ', Date.now() - 
+     baseStartTime);
+     feedQuery.getFeed(FeedCategory.Text, feedFetchCompleted);
+
+     console.log('Fetching Audio Feed', Date.now() - baseStartTime);
+     feedQuery.getFeed(FeedCategory.Audio, feedFetchCompleted);

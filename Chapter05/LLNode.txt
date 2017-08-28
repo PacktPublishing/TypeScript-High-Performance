@@ -1,0 +1,10 @@
+// Linked List Node
+    class LLNode {
+       public data: number;
+       public next: LLNode;
+
+       constructor(data: number) {
+        this.data = data;
+        this.next = null;
+       }
+     }

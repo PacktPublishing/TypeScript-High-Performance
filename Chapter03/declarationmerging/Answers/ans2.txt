@@ -1,0 +1,20 @@
+namespace HeightBalancedTree {
+          export interface BalanceFactor {
+             calculateLevelDifference(node1: AVLTreeNode, node2:  
+             AVLTreeNode): number;
+           }
+
+         export interface AVLTreeNode {
+           data: number;
+           height: number; // color: Color;
+           // error: this member was not exported and  
+           hence isn't visible to the merged namespace
+           left: AVLTreeNode;
+          right: AVLTreeNode;
+         }
+
+         export function getRootNodeColor(): Color { // return     
+         rootNodeColor; // error: this member was not  
+         exported and hence isn't visible to the merged namespace
+         }
+        }

@@ -1,0 +1,91 @@
+export class LinkedList {
+     private head: LLNode;
+
+     constructor() {
+       this.head = null;
+     }
+
+     // create or replace the linked list starting at 'head'
+     public createOrReplace(input: number[]): void {
+       this.head = new LLNode(input[0]);
+       let temp: LLNode = this.head;
+
+       for(let i: number = 1; i < input.length; i++) {
+         temp.next = new LLNode(input[i]);
+         temp = temp.next;
+        }
+      }
+
+     // returns the number of elements in the linked list
+     public count(): number {
+       let temp: LLNode = this.head;
+       let count: number = 0;
+       while(temp != null) {
+         temp = temp.next;
+         count++;
+        }
+        return count;
+       }
+
+     // returns a string representation of all the elements in the   
+     linked list starting from head
+     public traverse(): string {
+       let temp: LLNode = this.head;
+       let result: string = '';
+       while(temp != null) {
+         result+=temp.data + ',';
+         temp = temp.next;
+       }
+       return result;
+      }
+
+     // returns the head node
+     public getHead(): LLNode {
+       return this.head;
+     }
+
+     // reverse the linked list and returns the head of the reversed  
+     list
+     public reverse(): LLNode {
+       let prev: LLNode = null;
+       let curr: LLNode = this.head;
+       let next: LLNode;
+ 
+     // start traversing from the head
+       while (curr != null)
+       {
+         next = curr.next;
+         curr.next = prev; // flip the next pointer of the current node
+         prev = curr; // current node will become the next node's 
+         previous
+         curr = next; // move to the next node
+        }
+         return prev;
+       }
+
+     // returns a new list with values less than maxValue
+     public filterList(maxValue: number): LinkedList {
+       let temp: LLNode = this.head;
+       const arr: number[] = [];
+
+       while(temp != null) {
+         if (temp.data > maxValue) break; // return
+           arr.push(temp.data);
+           temp = temp.next;
+        }
+         const resultList: LinkedList = new LinkedList();
+         resultList.createOrReplace(arr);
+         return resultList;
+       }
+
+     // skips the elements at odd positions
+     public skipOdd(): void {
+       let temp: LLNode = this.head.next;
+       this.head = temp;
+ 
+       while (temp != null && temp.next != null) {
+         temp.next = temp.next.next;
+         temp = temp.next;
+       }
+      }
+     }

@@ -1,0 +1,11 @@
+ public binarySearch(arr: number[], key: number): number {
+               if (key > arr[4]) {
+                if (key > arr[7]) {
+                 if (key > arr[8]) {
+                   if (key == arr[9]) {
+                    return 9;
+                  }
+                 }
+                }
+               }
+              }

@@ -1,0 +1,58 @@
+ const calculateTimeDifference = (func: () => void): number => {
+     const time1: number = Date.now();
+     func();
+     const time2: number = Date.now();
+     return time2 - time1;
+    }
+
+    const generateGuid = (): string => {
+     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,  
+     (c: string) => {
+     const r = Math.random() * 16 | 0,
+     v = c == 'x' ? r : (r & 0x3 | 0x8);
+     return v.toString(16);
+     });
+    }
+
+    interface Map {
+       [key: string]: string;
+     }
+
+    const map: Map = {};
+
+    for (let i = 0; i < 50000; i++) {
+         map[(i+1).toString()] = generateGuid();
+       }
+
+    // for...in
+    const mapForIn = () => {
+     let dummy: string;
+     for (let key in map) {
+         dummy = key;
+       }
+   }
+
+    // for...of
+    const mapForOf = () => {
+        let dummy: string;
+        const keys = Object.keys(map);
+        for (let key of keys) {
+          dummy = key;
+       }
+    }
+
+    // naive
+    const mapForNaive = () => {
+      let dummy: string;
+      const keys = Object.keys(map);
+      for (let i = 0; i < 50000; i++) {
+         dummy = keys[i];
+     }
+    }
+
+    console.log('Time Difference (map:forof): ',  
+    calculateTimeDifference(mapForOf));
+    console.log('Time Difference (map:forin): ', 
+    calculateTimeDifference(mapForIn));
+    console.log('Time Difference (map:naive): ', 
+    calculateTimeDifference(mapForNaive));

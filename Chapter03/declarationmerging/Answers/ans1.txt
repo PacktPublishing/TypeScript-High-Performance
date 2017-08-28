@@ -1,0 +1,17 @@
+interface TreeNode {
+          data: number;
+          left: TreeNode;
+          right: TreeNode;
+          createNode: (data: number) => TreeNode; 
+        }
+
+        interface ITreeOperations {// root: TreeNode;
+           // error: same name member declarations  
+           cannot merge
+         mirrorTree: (node: TreeNode) => TreeNode;
+         putRoot(nodeValue: number): void;
+         getRoot(): TreeNode;
+         traverseTree: (node: TreeNode) => void;
+         putRoot(node: TreeNode): void;
+         getRoot(): TreeNode;
+        }

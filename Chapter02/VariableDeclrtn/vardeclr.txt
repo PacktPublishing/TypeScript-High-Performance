@@ -1,0 +1,39 @@
+// var tests
+    function varTest1(): () => number {
+     x = 16;
+     return function innerFunction(): number {
+       x++;
+       y--;
+       if (x > 100) {
+        var y;
+       }
+        return x;
+       }
+      var x;
+      x = 'hello-world';
+     }
+
+    function varTest2(): () => number {
+      x = 16;
+      return function innerFunction(): number {
+       var x;
+       return x;
+      }
+      var x;
+      x = 'hello-world';
+     }
+
+    function varTest3(): () => number {
+      x = 16;
+      return function innerFunction(): number {
+       x++;
+       var x;
+       return x;
+      }
+      var x;
+      x = 'hello-world';
+    }
+
+    console.log('var test 1: ', varTest1()());
+    console.log('var test 2: ', varTest2()());
+    console.log('var test 3: ', varTest3()());

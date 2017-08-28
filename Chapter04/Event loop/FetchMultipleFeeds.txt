@@ -1,0 +1,27 @@
+async function FetchMultipleFeeds(): Promise<void> {
+      const textFeed: IUserFeed[] = await feedQuery.
+      getFeed(FeedCategory.Text);
+      const imageFeed: IUserFeed[] = await feedQuery.
+      getFeed(FeedCategory.Image);
+      const audioFeed: IUserFeed[] = await feedQuery.
+      getFeed(FeedCategory.Audio);
+      const audioVideoFeed: IUserFeed[] = await feedQuery.
+      getFeed(FeedCategory.AudioVideo);
+      console.log('Succesfully fetched Text, Image, and AudioVideo   
+      Feed - ', Date.now() - baseStartTime);
+      console.log('Total Feed Length: ', textFeed.length +   
+      imageFeed.length + audioVideoFeed.length);
+    }
+
+    console.log('Fetch Text, Image, and AudioVideo Feed - ', 
+    Date.now()  
+    - baseStartTime);
+
+    FetchMultipleFeeds()
+    .catch((reject: Error) => {
+      console.log('Error during FetchMultipleFeeds - ', Date.now() -   
+      baseStartTime);
+      console.log('Error: ', reject);
+     });
+
+    console.log('Do other work - ', Date.now() - baseStartTime);

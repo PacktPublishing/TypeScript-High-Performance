@@ -1,0 +1,10 @@
+const feedFetchCompleted: ICallback = (result: IUserFeed[],  
+        err: Error): void => {
+          console.log('Callback called!', Date.now()-baseStartTime);
+          if (err) {
+            console.log('Error fetching feed: ', err);
+          } else {
+           console.log('Succesfully fetched feed of length: ',   
+           result.length);
+          }
+         }

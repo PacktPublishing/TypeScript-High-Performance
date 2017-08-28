@@ -1,0 +1,50 @@
+ const arr: Array<number> = [];
+    let temp: number = 0;
+
+    const randomizeArray = () => {
+      for (let i = 0; i < 50000; i++) {
+          arr[i] = Math.floor(Math.random() * 100000);
+        }
+     }
+
+    // dummy method
+    const dummy = () => null;
+
+    // for...in
+    const forinLoop = () => {
+      let dummy: number;
+      for (let i in arr) {
+          dummy = arr[i];
+        }
+     }
+
+    // for...of
+    const forofLoop = () => {
+       let dummy: number;
+       for (let i of arr) {
+       dummy = i;
+      }
+    }
+
+    // naive
+    const naiveLoop = () => {
+       let dummy: number;
+       for (let i = 0; i < arr.length; i++) {
+          dummy = arr[i];
+       }
+    }
+
+    const calculateTimeDifference = (func: () => void): number => {
+       randomizeArray();
+       const time1: number = Date.now();
+       func();
+       const time2: number = Date.now();
+       return time2 - time1;
+    }
+
+    console.log('Time Difference (forof): ', calculateTimeDifference
+    (forofLoop));
+    console.log('Time Difference (forin): ', calculateTimeDifference
+    (forinLoop));
+    console.log('Time Difference (naive): ', calculateTimeDifference
+    (naiveLoop));

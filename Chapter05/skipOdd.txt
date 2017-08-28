@@ -1,0 +1,13 @@
+ public skipOdd(): void {
+           if (!this.head) {
+             return;
+            }
+ 
+           let temp: LLNode = this.head.next;
+           this.head = temp;
+ 
+           while (temp != null && temp.next != null) {
+             temp.next = temp.next.next;
+             temp = temp.next;
+            }
+          }

@@ -1,0 +1,15 @@
+  const loadHomeScreen_Asynchronous = (startTime: number) => {
+          // fetch public feed asynchronously, takes around ~10s
+          setTimeout(() => {
+             console.log('Fetched Public Feed - ', Date.now() -  
+             startTime);
+           }, 10000);
+          console.log('Fetched Profile Info - ', Date.now() -  
+          startTime);
+          console.log('Fetched Friends Feed - ', Date.now() -  
+          startTime);
+          console.log('Fetched and Loaded Notifications - ',   
+          Date.now() - startTime);
+          console.log('Fetched and Loaded Friend Suggestions - ',  
+          Date.now() - startTime);
+        }

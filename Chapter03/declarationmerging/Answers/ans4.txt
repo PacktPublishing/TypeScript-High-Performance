@@ -1,0 +1,16 @@
+class TreeNode {
+          private root: TreeNode = TreeNode.node;
+          // private id: number = TreeNode.id; // error: 'id' not 
+          exported and thus cannot be accessed here
+          private data: number;
+
+         constructor(data: number) {
+           this.data = data;
+         }
+        }
+
+        // re-ordered namespace to follow after the class declaration
+        namespace TreeNode {
+          export let node: TreeNode = new TreeNode(10);
+          let id: number = 54;
+        }

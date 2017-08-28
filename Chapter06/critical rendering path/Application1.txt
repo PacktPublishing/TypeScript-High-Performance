@@ -1,0 +1,20 @@
+<!html>
+    <html>
+       <head>
+         <meta charset="utf-8">
+         <link href="//cdn.muicss.com/mui-0.9.17/css/mui.css"  
+         rel="stylesheet" type="text/css" />
+         <link href="allStyles.css" rel="stylesheet" type="text/css" />
+         <script src="allScript.js" type="text/javascript" />
+       </head>
+      <body>
+        <div class="mui-container">
+          <h2> Social Network X </h2>
+        <div id="top-feed" class="mui-panel">
+            <img class="image-border" src="{{feed[0].imageUrl}}" />
+            <p> {{feed[0].content}} </p>
+            <p> {{feed[0].commentsAndLikes}} </p>
+          </div>
+        </div>
+      </body>
+    </html>

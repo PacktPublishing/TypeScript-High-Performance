@@ -1,0 +1,21 @@
+class FeedRenderer {
+      private recentFeedGenerator: Feeder.IFeedGenerator;
+      private popularFeedGenerator: Feeder.IFeedGenerator;
+
+      constructor(universalKey: string) {
+        this.recentFeedGenerator = Feeder.FeedGeneratorFactory 
+        (Feeder.FeedStrategy.Recent, universalKey);
+        this.popularFeedGenerator = Feeder.FeedGeneratorFactory
+        (Feeder.FeedStrategy.Popular, universalKey);
+       }
+
+     public getRecentFeed(): Feeder.IFeed[] {
+      return this.recentFeedGenerator && this.recentFeedGenerator
+      .getFeed();
+    }
+
+     public getPopularFeed(): Feeder.IFeed[] {
+      return this.popularFeedGenerator &&   
+      this.popularFeedGenerator.getFeed(10);
+   }
+}

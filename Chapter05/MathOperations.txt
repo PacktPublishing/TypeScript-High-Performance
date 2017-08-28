@@ -1,0 +1,17 @@
+ class MathOperations {
+          public square(x: number): number {
+           return x * x;
+          }
+
+          public add(x: number, y: number): number {
+           return x + y;
+          }
+
+          public square(x: string): number {
+           let num: number = Number(x);
+           if (!x) {
+            return -1;
+           }
+           return num * num;
+          }
+        }

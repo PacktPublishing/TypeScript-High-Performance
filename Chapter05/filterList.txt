@@ -1,0 +1,13 @@
+ public filterList(maxValue: number): LinkedList {
+          let temp: LLNode = this.head;
+          const arr: number[] = [];
+
+          while(temp != null) {
+            if (temp.data > maxValue) break; // return
+              arr.push(temp.data);
+              temp = temp.next;
+            }
+            const resultList: LinkedList = new LinkedList();
+            resultList.createOrReplace(arr);
+            return resultList;
+           }

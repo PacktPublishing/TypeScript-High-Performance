@@ -1,0 +1,59 @@
+// test.ts - Unit testing the LinkedList class
+    import * as LinkedList from './src';
+    import { expect, assert } from 'chai';
+    import 'mocha';
+
+    describe('Linked List Manipulations', () => {
+ 
+     const linkedList: LinkedList.LinkedList = new 
+     LinkedList.LinkedList();
+     // tests createOrReplace method
+     it('should create a 5 element linked list', () => {
+       linkedList.createOrReplace([1,2,3,4,5]);
+       expect(linkedList.traverse()).to.equal('1,2,3,4,5,');
+       expect(linkedList.getHead().data).to.equal(1);
+       expect(linkedList.count()).to.be.at.least(3);
+     });
+
+     // tests createOrReplace method
+     it('should not create a linked list, head stays null', () => {
+       linkedList.createOrReplace([]);
+       expect(linkedList.getHead()).to.equal(null);
+       expect(linkedList.count()).to.equal(0);
+       expect(linkedList.traverse()).to.have.lengthOf(0);
+     });
+
+     // tests reverse method
+     it('should reverse the linked list and return the tail as the 
+     head', () => {
+        linkedList.createOrReplace([1,2,3]);
+        assert.strictEqual(linkedList.reverse().data, 3);
+        assert.isAbove(linkedList.count(), 0);
+     });
+
+     // tests filterList method
+     it('should filter the 7 element linked list to return a list with 
+     values < 100', () => {
+        linkedList.createOrReplace([45, 87, 105, 12, 45, 167, 144]);
+        const newList: LinkedList.LinkedList = linkedList.
+        filterList(100);
+        expect(newList.count()).to.equal(4);
+     });
+
+     // tests skipOdd method
+     it('should skip odd position elements and return 2->4->6', () =>    
+    {
+       linkedList.createOrReplace([1, 2, 3, 4, 5, 6]);
+       linkedList.skipOdd();
+       expect(linkedList.traverse()).to.equal('2,4,6,');
+       expect(linkedList.getHead()).to.not.equal(null);
+     });
+
+     // tests skipOdd method
+     it('should skip odd position elements in an empty list', () => {
+       linkedList.createOrReplace([]);
+       linkedList.skipOdd();
+       expect(linkedList.traverse()).to.equal('');
+       expect(linkedList.getHead()).to.equal(null);
+     });
+    });

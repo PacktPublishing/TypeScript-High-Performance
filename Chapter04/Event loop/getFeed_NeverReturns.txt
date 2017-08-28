@@ -1,0 +1,20 @@
+ public getFeed_NeverReturns(feedCategory: FeedCategory, callback:   
+    ICallback): void {
+      console.log(FeedCategory[feedCategory] + ' fetch begins',  
+      Date.now() - baseStartTime);
+
+     // simulating an asynchronous network request
+     setTimeout(() => {
+      let resultFeed: IUserFeed[] = [];
+      this.fakeUserFeed.forEach((userFeed: IUserFeed) => {
+      if (userFeed.feedCategory === feedCategory) {
+         resultFeed.push(userFeed);
+       }
+     });
+     console.log('resultFeed is available to be returned but callback  
+     never called!');
+     }, 5000);
+     }
+
+    feedQuery.getFeed_NeverReturns(FeedCategory.Text, 
+    feedFetchCompleted);

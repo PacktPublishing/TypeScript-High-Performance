@@ -1,0 +1,11 @@
+ // returns a string representation of all the elements in the  
+        linked list starting from head
+         public traverse(): string {
+           let temp: LLNode = this.head;
+           let result: string = '';
+           while(temp != null) {
+             result+=temp.data + ',';
+             temp = temp.next;
+           }
+           return result;
+          }

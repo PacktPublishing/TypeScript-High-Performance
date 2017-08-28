@@ -1,0 +1,41 @@
+namespace HeightBalancedTree {
+           enum Color {Red, Black};
+           let rootNodecolor = Color.Red;
+
+         export interface BalanceFactor {
+           calculateLevelDifference(node1: RedBlackTreeNode, node2:   
+           RedBlackTreeNode): number;
+        }
+
+         export interface RedBlackTreeNode {
+           data: number;
+           color: Color;
+           left: RedBlackTreeNode;
+           right: RedBlackTreeNode;
+         }
+
+         export interface Node extends RedBlackTreeNode {}
+
+         export function getNodeData(node: Node): any {
+           return {data: node.data, color: node.color}; 
+         }
+        }
+
+        namespace HeightBalancedTree {
+          export interface BalanceFactor {
+             calculateLevelDifference(node1: AVLTreeNode, node2: 
+             AVLTreeNode): number;
+        }
+
+         export interface AVLTreeNode {
+           data: number;
+           height: number;
+           color: Color;
+           left: AVLTreeNode;
+           right: AVLTreeNode;
+         }
+  
+         export function getRootNodeColor(): Color {
+           return rootNodeColor;
+         }
+        }

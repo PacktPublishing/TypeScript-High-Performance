@@ -1,0 +1,10 @@
+// returns the number of elements in the linked list
+        public count(): number {
+          let temp: LLNode = this.head;
+          let count: number = 0;
+          while(temp != null) {
+            temp = temp.next;
+            count++;
+          }
+          return count;
+         }

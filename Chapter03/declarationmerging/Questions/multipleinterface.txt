@@ -1,0 +1,20 @@
+  interface TreeNode {
+          data: number;
+         left: TreeNode;
+         right: TreeNode;
+         createNode: (data: number) => TreeNode; 
+        }
+
+        interface ITreeOperations {
+         root: TreeNode;
+         traverseTree: (node: TreeNode) => void;
+         putRoot(node: TreeNode): void;
+         getRoot(): TreeNode;
+        }
+
+        interface ITreeOperations {
+         root: TreeNode;
+         mirrorTree: (node: TreeNode) => TreeNode;
+         putRoot(nodeValue: number): void;
+         getRoot(): TreeNode;
+        }

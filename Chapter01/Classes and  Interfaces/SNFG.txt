@@ -1,0 +1,63 @@
+export enum FeedStrategy { Recent, Popular, MediaOnly };
+ 
+     
+     enum SocialMediaPlatform { Facebook, Instagaram, Snapchat, 
+     Twitter, StackOverflow };
+
+     export interface IFeed {
+        platformId: SocialMediaPlatform;
+        content: string;
+        media: string
+     }
+
+     
+     export interface IFeedGenerator {
+         getFeed(limit?: number): IFeed[];
+     }
+
+    
+     class RecentFeedGenerator implements IFeedGenerator {
+       private authenticate(universalKey: string): void {
+         
+     }
+ 
+     public getFeed(limit?: number): IFeed[] {
+      
+       {
+          custom algorithm to optimally calculate most recent social 
+          media feed for the user, across all the available social 
+          media platforms
+       } 
+      }
+     }
+
+
+     class PopularFeedGenerator implements IFeedGenerator {
+       private authenticate(universalKey: string): void {
+        
+      }
+
+     public getFeed(limit?: number): IFeed[] {
+    
+       return []; 
+     }
+    }
+
+     
+
+     
+     export function FeedGeneratorFactory(feedStrategy: FeedStrategy,  
+     universalKey: string): IFeedGenerator {
+       let feedGenerator: IFeedGenerator = null;
+       switch (feedStrategy) {
+          case FeedStrategy.Recent: {
+             feedGenerator = new RecentFeedGenerator();
+          break;
+        }
+          case FeedStrategy.Popular: {
+             feedGenerator = new RecentFeedGenerator();
+          break;
+        }
+      }
+      return feedGenerator;
+     }

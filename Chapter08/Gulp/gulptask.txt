@@ -1,0 +1,10 @@
+  var gulp = require("gulp");
+    gulp.task("default", function () {
+      var ts = require("gulp-typescript");
+      var tsResult = gulp.src("src/*.ts")
+      .pipe(ts({
+         noImplicitAny: true,
+         out: "output.js"
+     }));
+       return tsResult.js.pipe(gulp.dest("built/local"));
+    });

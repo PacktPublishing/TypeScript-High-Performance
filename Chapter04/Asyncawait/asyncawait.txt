@@ -1,0 +1,24 @@
+const baseStartTime: number = Date.now();
+
+    const feedQuery: FeedQuery = new FeedQuery();
+
+    // Fetch Text, Image, and AudioVideo Feed
+    async function FetchMultipleFeeds() {
+      const textFeed: IUserFeed[] = await feedQuery
+      .getFeed(FeedCategory.Text);
+      const imageFeed: IUserFeed[] = await feedQuery
+      .getFeed(FeedCategory.Image);
+      const audioVideoFeed: IUserFeed[] = await feedQuery
+      .getFeed(FeedCategory.AudioVideo);
+      console.log('Successfully fetched Text, Image, and AudioVideo 
+      Feed - ', Date.now() - baseStartTime);
+      console.log('Total Feed Length: ', textFeed.length + 
+      imageFeed.length + audioVideoFeed.length);
+    }
+
+    console.log('Fetch Text, Image, and AudioVideo Feed - ', 
+    Date.now() - baseStartTime);
+
+    FetchMultipleFeeds();
+
+    console.log('Do other work - ', Date.now() - baseStartTime);

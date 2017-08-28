@@ -1,0 +1,12 @@
+namespace TreeNode {
+         export let node: TreeNode = TreeNode.AVLTreeNode; // refers  
+         to the enum 'TreeNode'
+         let id: number = 54;
+        }
+
+        enum TreeNode {
+         RedBlackTreeNode,
+         AVLTreeNode,
+         TrieNode,
+         SuffixTreeNode
+        }

@@ -1,0 +1,14 @@
+  public createOrReplace(input: number[]): void {
+          if (!input || input.length == 0) {
+            this.head = null;
+            return;
+          }
+
+          this.head = new LLNode(input[0]);
+          let temp: LLNode = this.head;
+
+         for(let i: number = 1; i < input.length; i++) {
+           temp.next = new LLNode(input[i]);
+           temp = temp.next;
+          }
+         }

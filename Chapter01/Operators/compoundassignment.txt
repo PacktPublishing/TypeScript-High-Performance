@@ -1,0 +1,19 @@
+ // 1. compound assignments
+        let num: number = 40;
+        num *= 2; // num1 equals 80. this is same as num = num * 2
+
+        // 2. typeof
+        const str: String = 'test';
+        console.log(typeof num); // outputs number
+        console.log(typeof str === 'string'); // outputs true
+
+        // 3. instanceof
+        const arr: number[] = [1,2,3];
+        class ABC {};
+        const abc: ABC = new ABC();
+
+        console.log(arr instanceof Object); // outputs true
+        console.log(arr instanceof Array); // outputs true
+        console.log(abc instanceof Object); // outputs true
+        console.log(abc instanceof ABC); // outputs true
+        console.log(arr instanceof ABC); // outputs false

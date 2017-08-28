@@ -1,0 +1,8 @@
+  const feedQuery: FeedQuery = new FeedQuery();
+         const baseStartTime: number = Date.now();
+         console.log('Fetching Text Feed - ', Date.now() -     
+         baseStartTime);
+         feedQuery.getFeed(FeedCategory.Text, feedFetchCompleted);
+         console.log('Fetching Audio Feed', Date.now() -       
+         baseStartTime);
+         feedQuery.getFeed(FeedCategory.Audio, feedFetchCompleted);

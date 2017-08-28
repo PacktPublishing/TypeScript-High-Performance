@@ -1,0 +1,19 @@
+ // reverse the linked list and returns the head of the  
+        reversed list
+        public reverse(): LLNode {
+          let prev: LLNode = null;
+          let curr: LLNode = this.head;
+          let next: LLNode;
+ 
+         // start traversing from the head
+          while (curr != null)
+           {
+             next = curr.next;
+             curr.next = prev; // flip the next pointer of the current  
+             node
+             prev = curr; // current node will become the next node's  
+             previous
+             curr = next; // move to the next node
+           }
+           return prev;
+           }
