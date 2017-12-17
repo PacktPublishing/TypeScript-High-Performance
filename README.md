@@ -73,6 +73,3 @@ Chapter 8:
 * [Rapid Web Application Development with TypeScript 2.x [Video]](https://www.packtpub.com/application-development/rapid-web-application-development-typescript-2x-video?utm_source=github&utm_medium=repository&utm_campaign=9781787287389)
 
 * [Angular 2 Web Development with TypeScript [Video]](https://www.packtpub.com/web-development/angular-2-web-development-typescript-video?utm_source=github&utm_medium=repository&utm_campaign=9781785885563)
-
-### Suggestions and Feedback
-[Click here](https://docs.google.com/forms/d/e/1FAIpQLSe5qwunkGf6PUvzPirPDtuy1Du5Rlzew23UBp2S-P3wB-GcwQ/viewform) if you have any feedback or suggestions.
