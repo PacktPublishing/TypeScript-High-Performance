@@ -73,7 +73,3 @@ Chapter 8:
 * [Rapid Web Application Development with TypeScript 2.x [Video]](https://www.packtpub.com/application-development/rapid-web-application-development-typescript-2x-video?utm_source=github&utm_medium=repository&utm_campaign=9781787287389)
 
 * [Angular 2 Web Development with TypeScript [Video]](https://www.packtpub.com/web-development/angular-2-web-development-typescript-video?utm_source=github&utm_medium=repository&utm_campaign=9781785885563)
-### Download a free PDF
-
- <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
-<p align="center"> <a href="https://packt.link/free-ebook/9781785288647">https://packt.link/free-ebook/9781785288647 </a> </p>
